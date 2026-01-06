@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+/* --- 基本リセット --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* 背景は薄いグレー */
+    font-family: "Verdana", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+/* --- コンテナ（全体幅の固定） --- */
+.container {
+    width: 980px; /* PCでの標準的な幅 */
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* --- ヘッダー --- */
+.blog-header {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 20px;
+    border-bottom: 5px solid #0066cc;
+}
+
+.blog-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.blog-header h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.description {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* --- レイアウト（2カラム） --- */
+.content-wrapper {
+    display: flex; /* 横並びにする */
+    padding: 20px;
+    gap: 30px; /* メインとサイドバーの間隔 */
+}
+
+/* 左カラム：メイン */
+.main-content {
+    flex: 1; /* 残りの幅を全部使う */
+    min-width: 0; /* はみ出し防止 */
+}
+
+/* 右カラム：サイドバー */
+.sidebar {
+    width: 250px; /* 固定幅 */
+    flex-shrink: 0;
+}
+
+/* --- 記事スタイル --- */
+.entry {
+    margin-bottom: 40px;
+}
+
+.entry-title {
+    font-size: 18px;
+    border-left: 5px solid #0066cc; /* FC2っぽい左側の線 */
+    padding-left: 10px;
+    margin-bottom: 5px;
+    background: #f9f9f9;
+    padding: 10px;
+}
+
+.entry-title a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.entry-meta {
+    font-size: 11px;
+    color: #777;
+    text-align: right;
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 5px;
+}
+
+.entry-body {
+    padding: 10px 0;
+}
+
+.entry-footer {
+    font-size: 11px;
+    text-align: right;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px dotted #ccc;
+}
+
+/* --- サイドバーパーツ --- */
+.widget {
+    margin-bottom: 30px;
+}
+
+.widget-title {
+    font-size: 14px;
+    background: #eee;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget ul li {
+    margin-bottom: 8px;
+    padding-left: 15px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5"><rect width="5" height="5" fill="%23ccc"/></svg>') no-repeat left 6px; /* ドットアイコン */
+    font-size: 12px;
+}
+
+/* --- フッター --- */
+.blog-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.blog-footer a {
+    color: #ccc;
+}
+
+/* --- レスポンシブ対応（スマホで見た時） --- */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+    .content-wrapper {
+        flex-direction: column; /* 縦並びにする */
+    }
+    .sidebar {
+        width: 100%;
+    }
+}
