@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 
 /* --- 基本リセット --- */
@@ -8,7 +9,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* 背景は薄いグレー */
+    background-color: #a1d66e; 
     font-family: "Verdana", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
     color: #333;
     font-size: 14px;
@@ -162,6 +163,20 @@ a:hover {
     color: #ccc;
 }
 
+/* メイン画像縦用 */
+.main1-img {
+    width: 200px;
+    height: auto;
+    margin-right: 8px;
+}
+
+/* メイン画像横用 */
+.main2-img {
+    width: auto;
+    height: 200px;
+    margin-right: 8px;
+}
+
 /* --- レスポンシブ対応（スマホで見た時） --- */
 @media (max-width: 768px) {
     .container {
@@ -173,4 +188,11 @@ a:hover {
     .sidebar {
         width: 100%;
     }
+}
+/* これだ！用 */
+.big-star-text {
+    font-size: 2em;
+    font-weight: bold;
+    color: #000000;
+    letter-spacing: 0.2em;
 }
