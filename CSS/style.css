@@ -1,6 +1,4 @@
-
 @charset "UTF-8";
-
 /* --- 基本リセット --- */
 * {
     box-sizing: border-box;
@@ -9,7 +7,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #a1d66e; 
+    background-color: #ffffff; /* 全体薄緑 */
     font-family: "Verdana", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
     color: #333;
     font-size: 14px;
@@ -27,11 +25,27 @@ a:hover {
 }
 
 /* --- コンテナ（全体幅の固定） --- */
+/* containerは全幅・背景のみ */
+/* 中央寄せ・余白あり・最大幅980px */
 .container {
-    width: 980px; /* PCでの標準的な幅 */
-    margin: 0 auto;
-    background-color: #ffffff;
+    width: 100vw;
+    margin: 0;
+    background-color: #e7e7e796;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 0;
+    padding: 0 0 10px 0;
+}
+
+/* 中央寄せ2カラム用ラッパー */
+/* 2カラム中央寄せ */
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
 }
 
 /* --- ヘッダー --- */
@@ -42,28 +56,12 @@ a:hover {
     border-bottom: 5px solid #0cb1ce;
 }
 
-.blog-header h1 {
+ .blog-header h1 {
     margin: 0;
     font-size: 24px;
 }
-
-.blog-header h1 a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.description {
-    margin-top: 10px;
-    font-size: 12px;
-    color: #ccc;
-}
-
 /* --- レイアウト（2カラム） --- */
-.content-wrapper {
-    display: flex; /* 横並びにする */
-    padding: 20px;
-    gap: 30px; /* メインとサイドバーの間隔 */
-}
+/* .content-wrapperは上部で定義済み。重複削除 */
 
 /* 左カラム：メイン */
 .main-content {
@@ -157,6 +155,9 @@ a:hover {
     text-align: center;
     padding: 20px;
     font-size: 12px;
+    width: 100vw;
+    margin: 0;
+    border-radius: 0;
 }
 
 .blog-footer a {
@@ -178,12 +179,28 @@ a:hover {
 }
 
 /* --- レスポンシブ対応（スマホで見た時） --- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .container {
-        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
     }
     .content-wrapper {
-        flex-direction: column; /* 縦並びにする */
+        padding: 10px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .content-wrapper {
+        flex-direction: column;
+        padding: 5px;
+        gap: 0;
+        width: 100%;
+        margin: 0;
     }
     .sidebar {
         width: 100%;
