@@ -7,37 +7,52 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* 全体薄緑 */
+    background-color: #333333; /* 背景色：ダークグレー */
     font-family: "Verdana", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-    color: #333;
+    color: #e0e0e0; /* 文字色：薄いグレー */
     font-size: 14px;
     line-height: 1.6;
 }
 
 a {
-    color: #0066cc;
-    text-decoration: underline;
-}
-
-a:hover {
-    color: #ff6600;
+    color: #ff9900; /* リンク色：オレンジ */
     text-decoration: none;
 }
 
-/* --- コンテナ（全体幅の固定） --- */
-/* containerは全幅・背景のみ */
-/* 中央寄せ・余白あり・最大幅980px */
-.container {
-    width: 100vw;
-    margin: 0;
-    background-color: #e7e7e796;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 0;
-    padding: 0 0 10px 0;
+a:hover {
+    color: #ffcc66;
+    text-decoration: underline;
 }
 
-/* 中央寄せ2カラム用ラッパー */
-/* 2カラム中央寄せ */
+/* --- コンテナ（全体配置） --- */
+.container {
+    width: 100%;
+    margin: 0;
+    background-color: #333333; /* 背景色統一 */
+}
+
+/* --- ヘッダー --- */
+.blog-header {
+    background-color: #333333;
+    color: #fff;
+    padding: 40px 0 20px 0;
+    text-align: center; /* 中央寄せ */
+    border-bottom: none;
+}
+
+.blog-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.blog-header h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --- メインコンテンツラッパー --- */
+/* 画像のように中央に寄せて、幅を制限する */
 .content-wrapper {
     display: flex;
     flex-direction: row;
@@ -45,73 +60,57 @@ a:hover {
     padding: 20px;
     box-sizing: border-box;
     width: 100%;
-    margin: 0;
+    max-width: 1100px; /* 横幅の制限 */
+    margin: 0 auto; /* 中央寄せ */
+    align-items: flex-start;
 }
 
-/* --- ヘッダー --- */
-.blog-header {
-    background-color: #333;
-    color: #fff;
-    padding: 30px 20px;
-    border-bottom: 5px solid #0cb1ce;
-}
-
- .blog-header h1 {
-    margin: 0;
-    font-size: 24px;
-}
-/* --- レイアウト（2カラム） --- */
-/* .content-wrapperは上部で定義済み。重複削除 */
-
-/* 左カラム：メイン */
+/* --- カラム設定 --- */
 .main-content {
-    flex: 1; /* 残りの幅を全部使う */
-    min-width: 0; /* はみ出し防止 */
+    flex: 1;
+    min-width: 0;
 }
 
-/* 右カラム：サイドバー */
 .sidebar {
-    width: 250px; /* 固定幅 */
+    width: 300px; /* サイドバー幅 */
     flex-shrink: 0;
 }
 
-/* --- 記事スタイル --- */
+/* --- 記事（Entry）スタイル --- */
 .entry {
     margin-bottom: 40px;
 }
-/* アイコン画像 */
-.icon-img {
-    width: 100px;
-    height: auto;
-    margin-right: 8px;
-}
 
+/* 記事タイトル：画像のようなオレンジの背景バー */
 .entry-title {
     font-size: 18px;
-    border-left: 5px solid #0066cc; /* FC2っぽい左側の線 */
-    padding-left: 10px;
-    margin-bottom: 5px;
-    background: #f9f9f9;
-    padding: 10px;
+    background-color: #ff8800; /* オレンジ背景 */
+    color: #fff;
+    padding: 10px 15px;
+    margin-bottom: 0;
+    border-left: 5px solid #cc6600; /* 左側に少し濃いオレンジ */
 }
 
 .entry-title a {
+    color: #fff;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    display: block;
 }
 
 .entry-meta {
-    font-size: 11px;
-    color: #777;
+    background-color: #444;
+    padding: 5px 15px;
+    font-size: 12px;
+    color: #bbb;
     text-align: right;
-    margin-bottom: 15px;
-    border-bottom: 1px dotted #ccc;
-    padding-bottom: 5px;
+    border-bottom: 1px solid #555;
 }
 
+/* 記事本文エリア：グレーの背景ボックス */
 .entry-body {
-    padding: 10px 0;
+    background-color: #555555; /* コンテンツ背景 */
+    padding: 20px;
+    color: #ddd;
 }
 
 .entry-footer {
@@ -119,7 +118,7 @@ a:hover {
     text-align: right;
     margin-top: 10px;
     padding-top: 5px;
-    border-top: 1px dotted #ccc;
+    border-top: 1px dotted #777;
 }
 
 /* --- サイドバーパーツ --- */
@@ -127,89 +126,98 @@ a:hover {
     margin-bottom: 30px;
 }
 
+/* サイドバー見出し：グレー背景＋オレンジアクセント */
 .widget-title {
     font-size: 14px;
-    background: #eee;
-    padding: 5px 10px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #ccc;
+    background: #444;
+    color: #fff;
+    padding: 8px 10px;
+    margin-bottom: 0;
+    border-left: 5px solid #ff8800; /* オレンジのアクセント */
+    border-bottom: none;
+}
+
+.widget-content {
+    background-color: #222; /* ウィジェットの中身は少し暗く */
+    padding: 15px;
+    border: 1px solid #444;
+    border-top: none;
+}
+
+/* プロフィール画像周り */
+.icon-img {
+    display: block;
+    width: 90%; /* 横幅いっぱいに */
+    height: auto;
+    margin: 0 0 10px 0;
+    border: 1px solid #555;
 }
 
 .widget ul {
     list-style: none;
-    padding: 0;
+    padding: 15px;
     margin: 0;
+    background-color: #222;
+    border: 1px solid #444;
+    border-top: none;
 }
 
 .widget ul li {
     margin-bottom: 8px;
     padding-left: 15px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5"><rect width="5" height="5" fill="%23ccc"/></svg>') no-repeat left 6px; /* ドットアイコン */
+    /* ドットアイコンの色調整（SVGの色コード置換） */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5"><rect width="5" height="5" fill="%23ff9900"/></svg>') no-repeat left 8px;
     font-size: 12px;
+    border-bottom: 1px dashed #444;
+    padding-bottom: 5px;
+}
+.widget ul li:last-child {
+    border-bottom: none;
 }
 
 /* --- フッター --- */
 .blog-footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #222;
+    color: #777;
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     font-size: 12px;
-    width: 100vw;
-    margin: 0;
-    border-radius: 0;
+    margin-top: 40px;
+    border-top: 3px solid #ff8800;
 }
 
 .blog-footer a {
-    color: #ccc;
+    color: #999;
 }
 
-/* メイン画像縦用 */
-.main1-img {
-    width: 200px;
+/* --- 画像スタイル --- */
+.main1-img, .main2-img {
+    max-width: 100%;
     height: auto;
-    margin-right: 8px;
+    margin: 10px 0;
+    border: 1px solid #777;
 }
 
-/* メイン画像横用 */
-.main2-img {
-    width: auto;
-    height: 200px;
-    margin-right: 8px;
-}
-
-/* --- レスポンシブ対応（スマホで見た時） --- */
-@media (max-width: 1024px) {
-    .container {
-        border-radius: 0;
-        box-shadow: none;
-    }
-    .content-wrapper {
-        padding: 10px;
-        gap: 10px;
-    }
-}
-
+/* --- レスポンシブ対応 --- */
 @media (max-width: 768px) {
-    .container {
-        border-radius: 0;
-        box-shadow: none;
-    }
     .content-wrapper {
         flex-direction: column;
-        padding: 5px;
-        gap: 0;
+        padding: 10px;
         width: 100%;
-        margin: 0;
     }
     .sidebar {
         width: 100%;
     }
+    .blog-header h1 {
+        font-size: 22px;
+    }
 }
+
 /* これだ！用 */
 .big-star-text {
     font-size: 2em;
     font-weight: bold;
-    color: #000000;
+    color: #ffcc00; /* 黄色系に変更 */
     letter-spacing: 0.2em;
+    text-shadow: 1px 1px 2px #000;
 }

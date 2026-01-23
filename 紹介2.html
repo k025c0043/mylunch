@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title><a href="home.html">俺の外食記録！</a></title>
-        <meta name="description" content="自分が外食した物を紹介やレビューするサイトです">
-       
+<head>
+    <meta charset="UTF-8">
+    <title>俺の外食記録！</title>
+    <meta name="description" content="自分が外食した物を紹介やレビューするサイトです">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--ファビコン-->
-        <link rel="icon" type="image/png" href="images/Ore.gif"> 
+    <link rel="icon" type="image/png" href="images/Ore.gif"> 
 
-    <!--リセットCSS-->
-        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 
-    <!--Google Fonts-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
 
-    <!--オリジナルCSS-->
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
 
     <div class="container">
 
         <header class="blog-header">
-            <h1><a href="#">俺の外食記録！</a></h1>
+            <h1><a href="home.html">俺の外食記録！</a></h1>
         </header>
 
         <div class="content-wrapper">
@@ -40,17 +36,20 @@
                     <div class="entry-body">
                                 <p>みなさんこんにちは牛めし男です！</p>
                                 <p>今日は寒いので、温かいラーメンを食べに「なぎちゃんラーメン大森店」へ行ってきました！</p>
-                                <img src="images/unnamed.webp" class="main1-img" >
-                                <p>↑お店の外観</p>
+                                <div style="text-align:center;">
+                                    <img src="images/unnamed.webp" class="main1-img" >
+                                    <p>↑お店の外観</p>
+                                </div>
                                 <p>店内は活気があり、寒さも吹き飛ぶような雰囲気でした。</p>
                                 <p>注文したのは 中華そば（大盛り）！</p>
-                                <img src="images/IMG_2368.jpg" class="main2-img" >
+                                <div style="text-align:center;">
+                                    <img src="images/IMG_2368.jpg" class="main2-img" >
+                                </div>
                                 <p>スープは鶏ガラが効いた王道系で麺は昔ながらの縮れ麺、チャーシューも通常で3枚という多さに感動しました</p>
                                 <p>寒い日にぴったりの一杯で、更に無料でライスも付くので心も体も温まり、更に、腹も一杯になりました！</p>
-                                <!-- Googleマップ埋め込み例（店舗の地図に差し替え推奨） -->
                                 <div style="margin: 40px 0; text-align: center;">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.61591933356!2d139.72468097578357!3d35.58787067261748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601861007ba37099%3A0x2f2114da5bdfc2de!2z44Gq44GO44Gh44KD44KT44Op44O844Oh44OzIOWkp-ajrumnheWJjeW6lw!5e0!3m2!1sja!2sjp!4v1769142368951!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                <p style="margin-top:8px; font-size:15px; color:#555;">↑今回食べた店 なぎちゃんラーメン大森店</p>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.61591933356!2d139.72468097578357!3d35.58787067261748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601861007ba37099%3A0x2f2114da5bdfc2de!2z44Gq44GO44Gh44KD44KT44Op44O844Oh44OzIOWkp-ajrumnheWJjeW6lw!5e0!3m2!1sja!2sjp!4v1769142368951!5m2!1sja!2sjp" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <p style="margin-top:8px; font-size:15px; color:#aaa;">↑今回食べた店 なぎちゃんラーメン大森店</p>
                                 </div>
                     </div>
                 </article>
@@ -61,9 +60,8 @@
                 
                 <div class="widget">
                     <h3 class="widget-title">プロフィール</h3>
-                    <img src="images/マッキー.png" class="icon-img" >
-    
                     <div class="widget-content">
+                        <img src="images/マッキー.png" class="icon-img" >
                         <p><strong>名前：</strong>牛めし男</p>
                         <p>ネカフェと外食が趣味の人</p>
                     </div>
@@ -76,18 +74,15 @@
                         <li><a href="紹介2.html">2つ目の記事タイトル</a></li>
                     </ul>
                 </div>
-                 <!-- FC2カウンター ここから -->
-                    <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40658358&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40658358&main=1" /></noscript>
-                 <!-- FC2カウンター ここまで -->
-                 <!-- FC2拍手タグここから -->
-　　　　          <a href="//clap.fc2.com/post/pepsiman/?url=https%3A%2F%2Fk025c0043.github.io%2Fmylunch%2Fhome" target="_blank" title="web拍手 by FC2"><img src="//clap.fc2.com/images/button/white/pepsiman?url=https%3A%2F%2Fk025c0043.github.io%2Fmylunch%2Fhome&amp;lang=ja" alt="web拍手 by FC2" style="border:none;" /></a>
-    
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
+                 <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40658358&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40658358&main=1" /></noscript>
+                 <div style="margin-top:10px;">
+                  <a href="//clap.fc2.com/post/pepsiman/?url=https%3A%2F%2Fk025c0043.github.io%2Fmylunch%2Fhome" target="_blank" title="web拍手 by FC2"><img src="//clap.fc2.com/images/button/white/pepsiman?url=https%3A%2F%2Fk025c0043.github.io%2Fmylunch%2Fhome&lang=ja" alt="web拍手 by FC2" style="border:none;" /></a>
+                 </div>
             </aside>
 
-        </div> <footer class="blog-footer">
-            <p>Copyright &copy; 2026 俺の外食記録！</p>
+        </div> 
+        <footer class="blog-footer">
+            <p>Copyright © 2026 俺の外食記録！</p>
         </footer>
 
     </div> </body>
