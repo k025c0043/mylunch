@@ -3,34 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>俺の外食記録！</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="自分が外食した物を紹介やレビューするサイトです">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FC2カウンター ここから -->
+    <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40658358&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40658358&main=1" /></noscript>
+    <!-- FC2カウンター ここまで -->
+    <link rel="icon" type="image/png" href="images/Ore.gif"> 
+
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="CSS/style.css">
+
+    <style>
+        /* チャート用の追加スタイル */
+        .chart-container {
+            max-width: 400px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .chart-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        /* レーダーチャートの色調整 */
+        .ct-series-a .ct-point, .ct-series-a .ct-line, .ct-series-a .ct-bar, .ct-series-a .ct-slice-donut {
+            stroke: #ff9800; /* オレンジ色 */
+        }
+        .ct-series-a .ct-area {
+            fill: #ff9800;
+            fill-opacity: 0.4;
+        }
+        .ct-label {
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
+
         <header class="blog-header">
             <h1><a href="home.html">俺の外食記録！</a></h1>
         </header>
 
         <div class="content-wrapper">
-            <main class="main-content">
-                
-                <article class="entry">
-                    <h2 class="entry-title"><a href="#">このサイトについて</a></h2>
-                    <div class="entry-body">
-                        <p>このサイトでは自分が外食した物を紹介やレビューするサイトです</p>
-                        <p>基本テキストメインで、たまに画像を入れる感じです。</p>
-                    </div>
-                </article>
 
+            <main class="main-content">
                 <article class="entry">
-                    <h2 class="entry-title"><a href="#">最新の記事</a></h2>
+                    <h2 class="entry-title"><a href="#">あけましておめでとうございます！</a></h2>
                     <div class="entry-meta">
                         <span class="date">2026/01/01</span>
                         <span class="category">カテゴリ: <a href="#">日記</a></span>
@@ -38,35 +71,89 @@
                     <div class="entry-body">
                         <p>皆さん明けましておめでとうございます！</p>
                         <p>今年も宜しくお願いします！</p>
-                        <p>ということで・・・ </p>
-                        <div class="entry-more" style="margin-top:10px; text-align:right;"><a href="紹介1.html">続きを読む ＞＞</a></div>
+                        <p>ということで、成田山に初詣に行きました！</p>
+                        <div style="text-align:center;">
+                            <img src="images/IMG_2610.jpg" class="main1-img" >
+                            <p>↑入口付近の写真</p>
+                            <img src="images/IMG_2614.jpg" class="main1-img" >
+                        </div>
+                        <p>いや～流石に本殿はとても混んでいましたね^_^</p>
+                        <p>歩き回ってお腹が空いたので正月らしいもの（うな重）食べたいですね
+                        と思ったら...</p>
+                        <div style="text-align:center;">
+                            <img src="images/IMG_2848.jpg" class="main2-img" >
+                            <br>
+                            <img src="images/IMG_2855.PNG" class="main2-img" >
+                             <p class="big-star-text">☆こ☆れ☆だ☆！</p>
+                        </div>
+                         <p>入店して注文したのがこちら！</p>
+                        <div style="text-align:center;">
+                            <img src="images/IMG_2616.jpg" class="main2-img" >
+                        </div>
+                        <p>うな重（上）です！</p>
+                        <p>感想としては、ふっくらとしたうなぎに、甘辛いタレが絶妙に絡んでご飯が進みます。<br>
+                        香ばしい香りと、とろけるような食感がたまりませんでした。<br>
+                        たまにはこういう贅沢も良いですね！</p>
+
+                        <div class="chart-container">
+                            <div class="chart-title">今回の「うな重」評価</div>
+                            <div class="ct-chart ct-square" id="review-chart"></div>
+                        </div>
+                        <div style="margin: 40px 0; text-align: center;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.667096499994!2d140.31423177673273!3d35.78355307255445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60228b7de27b297d%3A0x436b259cf59aec58!2z6L-R5rGf5bGL!5e0!3m2!1sja!2sjp!4v1768272930878!5m2!1sja!2sjp" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p style="margin-top:8px; font-size:15px; color:#aaa;">↑今回食べた店 近江屋</p>
+                        </div>
                     </div>
                 </article>
 
             </main>
 
             <aside class="sidebar">
+                
                 <div class="widget">
                     <h3 class="widget-title">プロフィール</h3>
                     <div class="widget-content">
-                        <img src="images/マッキー.png" class="icon-img" alt="プロフィール画像">
+                        <img src="images/マッキー.png" class="icon-img" >
                         <p><strong>名前：</strong>牛めし男</p>
                         <p>ネカフェと外食が趣味の人</p>
                     </div>
                 </div>
+
                 <div class="widget">
                     <h3 class="widget-title">最新記事</h3>
                     <ul>
                         <li><a href="紹介1.html">あけましておめでとうございます！</a></li>
                         <li><a href="紹介2.html">中華そば食べてきました！</a></li>
-                                         </ul>
+                    </ul>
                 </div>
+                 <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40658358&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40658358&main=1" /></noscript>
+                 <div style="margin-top:10px;">
+                    <a href="//clap.fc2.com/post/pepsiman/?url=https%3A%2F%2Fk025c0043.github.io%2Fmylunch%2Fhome" target="_blank" title="web拍手 by FC2"><img src="//clap.fc2.com/images/button/white/pepsiman?url=https%3A%2F%2Fk025c0043.github.io%2Fmylunch%2Fhome&lang=ja" alt="web拍手 by FC2" style="border:none;" /></a>
+                 </div>
             </aside>
-        </div>
-        
+
+        </div> 
         <footer class="blog-footer">
-            <p>Copyright &copy; 2026 俺の外食記録！</p>
+            <p>Copyright © 2026 俺の外食記録！</p>
         </footer>
+
     </div>
+
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script>
+        // レーダーチャートの描画設定
+        new Chartist.Radar('#review-chart', {
+            labels: ['味', '量', '価格', '雰囲気', '映え'],
+            series: [
+                [5, 4, 3, 5, 4] // 5点満点での評価データ
+            ]
+        }, {
+            high: 5,
+            low: 0,
+            axisX: {
+                offset: 20 // ラベルの余白調整
+            }
+        });
+    </script>
 </body>
 </html>
